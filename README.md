@@ -53,6 +53,7 @@ It is mandatory to open at the very least 2 ports to be able to use your Dynmap 
 Instead of fiddling with ```iptables``` you can use ```firewalld``` to make things easier. CentOS ships with ```firewalld``` by default.
 
 If you're using the default ports (in other words, if you haven't edited your config file) the command is as follows:
+
 *Remember that this adds a permanent firewall rule to open ports on your system. This is a potential security risk. Don't do this if you have no idea what this means.*
 
 ```bash
