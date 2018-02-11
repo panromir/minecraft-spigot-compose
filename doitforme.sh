@@ -7,21 +7,26 @@
 # Builds the Spigot Image locally and doesn't push it to a registry (you'd have to do that manually, or if demand exists, I'll add that)
 # Removes the stuff that was used to build spigot
 
+rootfo="$PWD"
+
 # Make stuff executable
 chmod +x "$PWD"/dynmap/get-dynmap.sh
 chmod +x "$PWD"/spigot/builder/buildspigot.sh
 
 # Get Dynmap
-/bin/bash "$PWD"/dynmap/get-dynmap.sh
+cd "$PWD"/dynmap/
+/bin/bash get-dynmap.sh
 
 # Build Spigot .jar file
-/bin/bash "$PWD"/spigot/builder/buildspigot.sh
+cd "$PWD"/spigot/builder/
+/bin/bash buildspigot.sh
 
 # Build Spigot Docker Image
 # docker build -t spigot_local:latest "$PWD"/spigot
 # Done in Compose
 
 #Create Map folder for volume
+cd "$rootfo"
 mkdir "$PWD"/map
 
 # Run it.
