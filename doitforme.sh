@@ -6,3 +6,17 @@
 # Gets the latest version of dynmap
 # Builds the Spigot Image locally and doesn't push it to a registry (you'd have to do that manually, or if demand exists, I'll add that)
 # Removes the stuff that was used to build spigot
+
+
+
+# Get Dynmap
+/bin/bash "$PWD"/dynmap/get-dynmap.sh
+
+# Build Spigot .jar file
+/bin/bash "$PWD"/spigot/builder/buildspigot.sh
+
+# Build Spigot Docker Image
+docker build -t spigot_local:latest "$PWD"/spigot
+
+# Run it.
+docker-compose up
