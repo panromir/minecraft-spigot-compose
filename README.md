@@ -38,7 +38,8 @@ wget https://github.com/panromir/minecraft-spigot-compose/archive/master.zip && 
 unzip master.zip && \
 cd minecraft-spigot-compose-master && \
 chmod +x doitforme.sh && \
-/bin/bash doitforme.sh init
+/bin/bash doitforme.sh init && \
+/bin/bash doitforme.sh
 
 ``` 
 
