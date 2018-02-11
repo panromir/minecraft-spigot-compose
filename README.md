@@ -13,11 +13,11 @@ Please install Docker CE and Docker Compose.
 Refer to your Distribution's documentation on how to do that.
 
 ### Docker CE
-Debian: https://docs.docker.com/install/linux/docker-ce/debian/
-CentOS: https://docs.docker.com/install/linux/docker-ce/centos/
-Ubuntu: https://docs.docker.com/install/linux/docker-ce/ubuntu/
-Fedora: https://docs.docker.com/install/linux/docker-ce/fedora/
-Binaries (for all other systems): https://docs.docker.com/install/linux/docker-ce/binaries/
+Debian: https://docs.docker.com/install/linux/docker-ce/debian/  
+CentOS: https://docs.docker.com/install/linux/docker-ce/centos/  
+Ubuntu: https://docs.docker.com/install/linux/docker-ce/ubuntu/  
+Fedora: https://docs.docker.com/install/linux/docker-ce/fedora/  
+Binaries (for all other systems): https://docs.docker.com/install/linux/docker-ce/binaries/  
 
 ### Docker compose
 
@@ -49,7 +49,7 @@ Since I personally use CentOS 7, I can only provide information for that. If you
 https://www.centos.org/
 ### Firewalld
 
-It is mandatory to open at the very least 2 ports to be able to use your Dynmap and your Minecraft server. 
+It is mandatory to open at the very least 2 ports to be able to use your Dynmap and your Minecraft server.  
 Instead of fiddling with ```iptables``` you can use ```firewalld``` to make things easier. CentOS ships with ```firewalld``` by default.
 
 If you're using the default ports (in other words, if you haven't edited your config file) the command is as follows:
