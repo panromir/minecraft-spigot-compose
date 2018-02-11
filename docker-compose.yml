@@ -12,6 +12,7 @@ services:
       - "./world:/root/mc/world/"
       - "./world_nether:/root/mc/world_nether/"
       - "./world_the_end:/root/mc/world_the_end/"
+      - ".spigot/configs/ops.json:/root/mc/ops.json:z"
     deploy:
       restart_policy:
         condition: on-failure
