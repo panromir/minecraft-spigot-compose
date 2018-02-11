@@ -7,7 +7,7 @@ services:
     image: spigot_local:latest
     volumes: 
       - "./spigot/configs/server.properties:/root/mc/server.properties:ro,z"
-      - "./spigot/configs/spigot.yml:/root/mc/spigot.yml:ro,z"
+      - "./spigot/configs/spigot.yml:/root/mc/spigot.yml:z"
       - "./map:/root/mc/plugins/dynmap:z"
     deploy:
       restart_policy:
