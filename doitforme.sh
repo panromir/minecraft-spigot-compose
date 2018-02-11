@@ -32,6 +32,11 @@ if [ "$1" == "init" ]; then
     mkdir "$PWD"/map
 fi
 
+if [ "$1" == "down" ]; then
+    cd "$rootfo"
+    docker-compose down
+fi
+
 # Run it.
 cd "$rootfo"
 docker-compose up -d
