@@ -30,6 +30,9 @@ if [ "$1" == "init" ]; then
     #Create Map folder for volume
     cd "$rootfo"
     mkdir "$PWD"/map
+    mkdir "$PWD"/world
+    mkdir "$PWD"/world_nether
+    mkdir "$PWD"/world_the_end
 fi
 
 if [ "$1" == "down" ]; then

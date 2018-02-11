@@ -9,6 +9,9 @@ services:
       - "./spigot/configs/server.properties:/root/mc/server.properties:ro,z"
       - "./spigot/configs/spigot.yml:/root/mc/spigot.yml:z"
       - "./map:/root/mc/plugins/dynmap:z"
+      - "./world:/root/mc/world/"
+      - "./world_nether:/root/mc/world_nether/"
+      - "./world_the_end:/root/mc/world_the_end/"
     deploy:
       restart_policy:
         condition: on-failure
