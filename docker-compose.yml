@@ -3,7 +3,7 @@ version: '3'
 services:
   spigot_local_build:
     build:
-      context: .
+      context: ./spigot
     image: spigot_local:latest
 # MC Server 
   spigot_local:
