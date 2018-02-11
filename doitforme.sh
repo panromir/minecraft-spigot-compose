@@ -8,28 +8,30 @@
 # Removes the stuff that was used to build spigot
 
 rootfo="$PWD"
+if [ "$1" == "init" ]; then
+    
+    # Make stuff executable
+    chmod +x "$PWD"/dynmap/get-dynmap.sh
+    chmod +x "$PWD"/spigot/builder/buildspigot.sh
 
-# Make stuff executable
-chmod +x "$PWD"/dynmap/get-dynmap.sh
-chmod +x "$PWD"/spigot/builder/buildspigot.sh
+    # Get Dynmap
+    cd "$PWD"/dynmap/
+    /bin/bash get-dynmap.sh
 
-# Get Dynmap
-cd "$PWD"/dynmap/
-/bin/bash get-dynmap.sh
+    # Build Spigot .jar file
+    cd "$rootfo"
+    cd "$PWD"/spigot/builder/
+    /bin/bash buildspigot.sh
 
-# Build Spigot .jar file
-cd "$rootfo"
-cd "$PWD"/spigot/builder/
-/bin/bash buildspigot.sh
+    # Build Spigot Docker Image
+    # docker build -t spigot_local:latest "$PWD"/spigot
+    # Done in Compose
 
-# Build Spigot Docker Image
-# docker build -t spigot_local:latest "$PWD"/spigot
-# Done in Compose
-
-#Create Map folder for volume
-cd "$rootfo"
-mkdir "$PWD"/map
+    #Create Map folder for volume
+    cd "$rootfo"
+    mkdir "$PWD"/map
+fi
 
 # Run it.
 cd "$rootfo"
-docker-compose up
+docker-compose up -d
