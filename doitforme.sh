@@ -38,5 +38,8 @@ if [ "$1" == "down" ]; then
 fi
 
 # Run it.
-cd "$rootfo"
-docker-compose up -d
+
+if [ -z "$1" ]; then
+    cd "$rootfo"
+    docker-compose up -d
+fi
