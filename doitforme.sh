@@ -16,7 +16,11 @@
 /bin/bash "$PWD"/spigot/builder/buildspigot.sh
 
 # Build Spigot Docker Image
-docker build -t spigot_local:latest "$PWD"/spigot
+# docker build -t spigot_local:latest "$PWD"/spigot
+# Done in Compose
+
+#Create Map folder for volume
+mkdir "$PWD"/map
 
 # Run it.
 docker-compose up

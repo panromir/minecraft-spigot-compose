@@ -1,1 +1,36 @@
 # Runs all containers in conjunction
+version: '3'
+services:
+  spigot_local_build:
+    build:
+      context: ./spigot
+      image: spigot_local:latest
+# MC Server 
+  spigot_local:
+    image: spigot_local:latest
+    volumes: 
+      - "./spigot/configs/server.properties:/root/mc/server.properties:ro,z"
+      - "./spigot/configs/spigot.yml:/root/mc/spigot.yml:ro,z"
+      - "./map:/root/mc/plugins/dynmap:z"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    ports:
+      - 25565:25565
+# Webserver
+  nginx:
+    image: nginx:latest
+    volumes:
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf:ro,z"
+    ports:
+      - 8081:80
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    
