@@ -5,9 +5,6 @@ services:
     build:
       context: ./spigot
     image: spigot_local:latest
-# MC Server 
-  spigot_local:
-    image: spigot_local:latest
     volumes: 
       - "./spigot/configs/server.properties:/root/mc/server.properties:ro,z"
       - "./spigot/configs/spigot.yml:/root/mc/spigot.yml:ro,z"
@@ -21,6 +18,22 @@ services:
     ports:
       - 25565:25565
       - 8123:8123
+# MC Server 
+#  spigot_local:
+#    image: spigot_local:latest
+#    volumes: 
+#      - "./spigot/configs/server.properties:/root/mc/server.properties:ro,z"
+#      - "./spigot/configs/spigot.yml:/root/mc/spigot.yml:ro,z"
+#      - "./map:/root/mc/plugins/dynmap:z"
+#    deploy:
+#      restart_policy:
+#        condition: on-failure
+#        delay: 5s
+#        max_attempts: 3
+#        window: 120s
+#    ports:
+#      - 25565:25565
+#      - 8123:8123
 # Webserver
   nginx:
     image: nginx:latest
