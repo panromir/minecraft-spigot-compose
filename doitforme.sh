@@ -7,7 +7,9 @@
 # Builds the Spigot Image locally and doesn't push it to a registry (you'd have to do that manually, or if demand exists, I'll add that)
 # Removes the stuff that was used to build spigot
 
-
+# Make stuff executable
+chmod +x "$PWD"/dynmap/get-dynmap.sh
+chmod +x "$PWD"/spigot/builder/buildspigot.sh
 
 # Get Dynmap
 /bin/bash "$PWD"/dynmap/get-dynmap.sh
