@@ -34,6 +34,11 @@ Fine!
 Go to you Linux machine, open a ```bash```.
 
 ```bash
+wget https://github.com/panromir/minecraft-spigot-compose/archive/master.zip && \
+unzip master.zip && \
+cd minecraft-spigot-compose-master && \
+chmod +x doitforme.sh && \
+/bin/bash doitforme.sh init
 
 ``` 
 
@@ -57,8 +62,7 @@ If you're using the default ports (in other words, if you haven't edited your co
 *Remember that this adds a permanent firewall rule to open ports on your system. This is a potential security risk. Don't do this if you have no idea what this means.*
 
 ```bash
-
+firewall-cmd --zone=public --add-port=25565/tcp --permanent
+firewall-cmd --zone=public --add-port=8082/tcp --permanent
 ```
-
-### SELinux
 
