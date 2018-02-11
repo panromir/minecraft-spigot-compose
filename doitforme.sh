@@ -18,6 +18,7 @@ cd "$PWD"/dynmap/
 /bin/bash get-dynmap.sh
 
 # Build Spigot .jar file
+cd "$rootfo"
 cd "$PWD"/spigot/builder/
 /bin/bash buildspigot.sh
 
@@ -30,4 +31,5 @@ cd "$rootfo"
 mkdir "$PWD"/map
 
 # Run it.
+cd "$rootfo"
 docker-compose up
