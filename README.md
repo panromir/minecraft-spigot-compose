@@ -6,6 +6,8 @@ At that point, I will probably provide a script, that makes script retrieval aut
 
 I will keep this as simple and transparent as possible.
 
+Please alter your ```ops.json``` file and add yourself as Operator.
+
 # Prerequisites
 
 ## Docker
