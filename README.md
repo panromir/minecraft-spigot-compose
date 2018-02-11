@@ -25,7 +25,7 @@ All Distributions https://docs.docker.com/compose/install/
 
 ## Hardware
 
-Technically, this should run on anything that supports Docker and Docker Compose in a reasonably recent version and has more >= 4GB RAM and at least a Dual Core.
+Technically, this should run on anything that supports Docker and Docker Compose in a reasonably recent version and has >= 4GB RAM and at least a Dual Core.
 
 # TL;DR 
 *Just tell me what I need to paste into my Terminal*
