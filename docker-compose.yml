@@ -4,7 +4,7 @@ services:
   spigot_local_build:
     build:
       context: ./spigot
-      image: spigot_local:latest
+    image: spigot_local:latest
 # MC Server 
   spigot_local:
     image: spigot_local:latest
