@@ -33,6 +33,7 @@ if [ "$1" == "init" ]; then
     mkdir "$PWD"/world
     mkdir "$PWD"/world_nether
     mkdir "$PWD"/world_the_end
+    
 fi
 
 if [ "$1" == "down" ]; then
@@ -40,6 +41,27 @@ if [ "$1" == "down" ]; then
     docker-compose down
 fi
 
+if [ "$1" == "update" ]; then
+    cd "$rootfo"
+
+    docker-compose down
+    
+    # Delete Old binaries
+    rm -rf "$PWD"/dynmap/dynmap.jar
+    rm -rf "$PWD"/spigot/builder/spigot.jar
+    rm -rf "$PWD"/spigot.jar
+    rm -rf "$PWD"/spigot/dynmap.jar
+
+     # Get Dynmap
+    cd "$PWD"/dynmap/
+    /bin/bash get-dynmap.sh
+
+    # Build Spigot .jar file
+    cd "$rootfo"
+    cd "$PWD"/spigot/builder/
+    /bin/bash buildspigot.sh
+fi
+    
 # Run it.
 
 if [ -z "$1" ]; then
