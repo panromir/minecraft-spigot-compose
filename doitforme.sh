@@ -24,8 +24,8 @@ if [ "$1" == "init" ]; then
     /bin/bash buildspigot.sh
 
     # Build Spigot Docker Image
-    # docker build -t spigot_local:latest "$PWD"/spigot
-    # Done in Compose
+    docker build -t spigot_local:latest "$PWD"/spigot
+    Done in Compose
 
     #Create Map folder for volume
     cd "$rootfo"
@@ -45,7 +45,7 @@ if [ "$1" == "update" ]; then
     cd "$rootfo"
 
     docker-compose down
-    
+
     # Delete Old binaries
     rm -rf "$PWD"/dynmap/dynmap.jar
     rm -rf "$PWD"/spigot/builder/spigot.jar
@@ -60,6 +60,11 @@ if [ "$1" == "update" ]; then
     cd "$rootfo"
     cd "$PWD"/spigot/builder/
     /bin/bash buildspigot.sh
+
+    # Build Spigot Docker Image
+    cd "$rootfo"
+    docker build -t spigot_local:latest "$PWD"/spigot
+    
 fi
     
 # Run it.
