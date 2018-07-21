@@ -25,7 +25,7 @@ if [ "$1" == "init" ]; then
 
     # Build Spigot Docker Image
     docker build -t spigot_local:latest "$PWD"/spigot
-    Done in Compose
+    #Done in Compose
 
     #Create Map folder for volume
     cd "$rootfo"
