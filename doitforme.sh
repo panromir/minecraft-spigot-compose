@@ -24,6 +24,7 @@ if [ "$1" == "init" ]; then
     /bin/bash buildspigot.sh
 
     # Build Spigot Docker Image
+    cd "$rootfo"
     docker build -t spigot_local:latest "$PWD"/spigot
     #Done in Compose
 
